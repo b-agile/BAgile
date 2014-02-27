@@ -1,0 +1,23 @@
+!!!
+%html{:lang =>"#{I18n.locale}"}
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Ticket'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Ticket'}"}
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = yield(:head)
+  %body{:class => "#{controller_name} #{action_name} #{@body_class}"}
+    %header
+      = render 'layouts/navigation'
+    - if content_for?(:top)
+      =content_for(:top)
+    %main{:role => "main"}
+      .container.content
+        = render 'layouts/messages'
+        = yield
+    %footer
+      .container
+        .row
+          = render 'layouts/footer'

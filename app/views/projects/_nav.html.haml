@@ -1,0 +1,5 @@
+%ul.nav.nav-tabs.project-nav
+  %li{:class=>"#{request.original_url==project_url(@project)?'active':'' }"}=link_to t('home'), @project
+  %li{:class=>"#{request.original_url==scrumboard_project_sprint_url(:project_id=>@project.id,:id=>@project.current_sprint.id)?'active':'' }"}=link_to t('scrumboard'), scrumboard_project_sprint_path(:project_id=>@project.id,:id=>@project.current_sprint.id)
+  %li{:class=>"#{request.original_url==project_tasks_url(:project_id=>@project.id)?'active':'' }"}=link_to t('backlog'), project_tasks_path(:project_id=>@project.id)
+  %li.pull-right{:class=>"#{request.original_url==edit_project_url(@project)?'active':'' }"}=link_to t('edit_project'), edit_project_path(@project)

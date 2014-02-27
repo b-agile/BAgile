@@ -1,0 +1,10 @@
+= simple_form_for(@project) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :users, as: :check_boxes,  include_blank: false,  label_method: :to_s
+
+
+  .form-actions
+    = f.button :submit

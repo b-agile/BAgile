@@ -1,0 +1,18 @@
+- content_for :top do
+  %h1= @sprint
+
+
+=render 'projects/nav'
+
+.row
+  - @status.each do |s|
+    .col-sm-3
+      %span{:class=>"btn #{s}"}= t "simple_form.options.task.status.#{s}"
+
+
+- @tasks.each do |task|
+  .row
+    %div{:class=>"#{class_from_status(task.status)}",:draggable=>"true"}
+      = render 'tasks/show' , task: task
+
+

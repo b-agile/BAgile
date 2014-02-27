@@ -1,0 +1,18 @@
+- content_for :top do
+  %h1= @project
+
+
+=render 'projects/nav'
+
+%table.table.table-hover
+  %tr
+    %th #
+    %th Title
+    %th Status
+
+  - @tasks.each do |task|
+    %tr{:class=>"#{task.priority.delete("1234567890_")}"}
+      %td= link_to "#{task.kind}#{task.id}", task
+      %td{width: '99%'}= task.title
+      %td
+        %span{:class=>"btn #{task.status}"}= t "simple_form.options.task.status.#{task.status}"

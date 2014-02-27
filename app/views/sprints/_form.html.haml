@@ -1,0 +1,12 @@
+= simple_form_for([@project,@sprint]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :version
+    = f.input :name
+    = f.input :start_date
+    = f.input :end_end
+    = f.input :status,collection: [:open, :started, :done], include_blank: false
+
+  .form-actions
+    = f.button :submit

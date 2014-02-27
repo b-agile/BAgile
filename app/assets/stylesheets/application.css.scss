@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+html,body{
+  height: 100%;
+}
+
+body{
+  padding-top: 70px;
+  background-image: image_url("stay_cool.jpg");
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  background-color: #cccccc !important;
+  background-attachment: fixed;
+  
+}
+
+h1{
+  text-align: center !important;
+  color:white !important;
+}
+
+main{
+  background: transparent !important;
+}
+
+.container.content{
+  background-color:rgba(255, 255, 255, 0.9);
+  opacity: 0.99;
+  margin-bottom:50px;
+  padding: 2em 2em 3em 2em;
+}
+
+
+.ticket{
+  padding: 0.8em;
+  margin-top: 0.2em;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  border-right: 1px solid gray;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.blocker{
+  border-left: 3px solid #FF0100;
+}
+.high{
+  border-left: 3px solid #FF9999;
+}
+.normal{
+  border-left: 3px solid #666666;
+}
+.low{
+  border-left: 3px solid #cccccc;
+}
+.just_to_remember{
+  border-left: 3px solid #00000000;
+}
+
+
+
+
+
+.todo{
+  color: white;
+  background-color: #111;
+  border-color: #111;
+}
+
+.in_progress{
+  color: white;
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+.done{
+  color: white;
+  background-color: #11CC11;
+  border-color: #11CC11;
+}
+.delivered{
+  color: white;
+  background-color: #428bca;
+  border-color: #428bca;
+
+}
+
+.button-bar{
+  text-align: right;
+  margin-top: 3em;
+}
+
+.project-nav{
+  margin-top: -2em;
+  margin-bottom: 2em !important;
+}
+
+.nav.navbar-nav{
+  float: none !important;
+}

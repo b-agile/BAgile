@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Version:
+  = @sprint.version
+%p
+  %b Name:
+  = @sprint.name
+%p
+  %b Project:
+  = @sprint.project
+%p
+  %b Start date:
+  = @sprint.start_date
+%p
+  %b End end:
+  = @sprint.end_end
+%p
+  %b Status:
+  = @sprint.status
+%p
+  %b Initial time:
+  = @sprint.initial_time
+
+= link_to 'Edit', edit_project_sprint_path(@sprint.project, @sprint)
+\|
+= link_to 'Back', project_sprints_path

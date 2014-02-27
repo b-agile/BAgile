@@ -1,0 +1,31 @@
+%p
+  %b Role:
+  = @task.role
+%p
+  %b Title:
+  = @task.title
+%p
+  %b Description:
+  = @task.description
+%p
+  %b Priority:
+  = @task.priority
+%p
+  %b Estimation in second:
+  = @task.estimation_in_second
+%p
+  %b Time spent in second:
+  = @task.time_spent_in_second
+%p
+  %b Reporter:
+  = @task.reporter
+%p
+  %b Assign to:
+  = @task.assign_to
+%p
+  %b Status:
+  = @task.status
+
+= link_to 'Edit', edit_task_path(@task)
+\|
+= link_to 'Back', tasks_path

@@ -1,0 +1,4 @@
+%div{:class=>"#{task.priority.delete("1234567890_")} ticket"}
+  %div
+    = link_to "#{task.kind}#{task.id}", task
+    = task.title

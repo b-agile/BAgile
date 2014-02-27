@@ -1,0 +1,18 @@
+= simple_form_for(@task) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :project, collection: current_user.projects, :label_method => :name, :include_blank=>false
+    = f.association :sprint, collection: @task.project.sprints, :label_method => :name, prompt:t('backlog')
+    = f.input :title
+    = f.input :description
+    = f.input :kind,collection: [ :ST,:B, :T,:TECH], include_blank: false
+    = f.input :priority,collection: [:'9_blocker', :'7_high', :'5_normal', :'2_low', :'0_just_to_remember'], include_blank: false
+    = f.input :estimation
+    = f.input :time_spent
+    = f.association :reporter,:label_method => :to_s,include_blank: false
+    = f.association :assign_to,:label_method => :to_s, prompt:t('not_assigned')
+    = f.input :status,collection: [:todo, :in_progress, :done, :delivered], include_blank: false
+
+  .form-actions
+    = f.button :submit

@@ -20,4 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  editing: "Editing"
   hello: "Hello world"
+  simple_form:
+    labels:
+      task:
+        title: "Title"
+        description: "Description"
+    placeholders:
+      task:
+        title: "As a user, I want to add a ticket"
+        description: "Add every information to help the developer to understand what you want."
+    options:
+      task:
+        status:
+          todo: "Todo"
+          in_progress: "In Progress"
+          done: "Done"
+          delivered: "Delivered"
+        priority:
+          9_blocker: "Blocker"
+          7_high: "High"
+          5_normal: "Normal"
+          2_low: "Low"
+          0_just_to_remember: "Just to remember"
+        kind:
+          B: "Bug"
+          ST: "Story"
+          T: "Text only"
+          TECH: "Technical"

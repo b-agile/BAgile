@@ -1,0 +1,10 @@
+-content_for :top do
+  %h1= "#{t('editing')} #{@project.name}"
+
+=render 'nav'
+
+= render 'form'
+
+= link_to 'Show', @project
+\|
+= link_to 'Back', projects_path
