@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-BAgile::Application.config.session_store :cookie_store, key: '_ticket_session'
+BAgile::Application.config.session_store :cookie_store, key: '_bagile_session'
