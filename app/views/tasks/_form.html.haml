@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.association :project, collection: current_user.projects, :label_method => :name, :include_blank=>false
-    = f.association :sprint, collection: @task.project.sprints, :label_method => :name, prompt:t('backlog')
+    = f.association :sprint, collection: @task.project.sprints, :label_method => :name, prompt:t('backlog')  unless @task.project.nil?
     = f.input :title
     = f.input :description
     = f.input :kind,collection: [ :ST,:B, :T,:TECH], include_blank: false

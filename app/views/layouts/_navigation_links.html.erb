@@ -16,6 +16,7 @@
         <% @projects_on_navbar.each do |p|%>
             <li><%= link_to p.name, p %></li>
         <% end %>
+        <hr />
       </ul>
     <li><%= link_to 'New Task', new_task_path %></li>
 <% end %>

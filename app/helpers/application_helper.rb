@@ -14,7 +14,8 @@ module ApplicationHelper
 
 
   def current_project
-    session[:current_project_id]||=Project.order("RANDOM()").first.id
-    Project.find session[:current_project_id]
+
+    session[:current_project_id]||=Project.order("RANDOM()").first.id unless Project.count == 0
+    Project.find session[:current_project_id] unless session[:current_project_id].nil?
   end
 end
