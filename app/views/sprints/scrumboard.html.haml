@@ -4,15 +4,15 @@
 
 =render 'projects/nav'
 
-.row
-  - @status.each do |s|
-    .col-sm-3
+- @status.each do |s|
+  .col-sm-3{:droppable=>'true',:status=>"#{s}",:ondrop=>'drop(event)', :ondragover=>'allowDrop(event)',:ondragenter=>'handleDragEnter(event)',:ondragleave=>'handleDragLeave(event)'}
+    .row
       %span{:class=>"btn #{s}"}= t "simple_form.options.task.status.#{s}"
+    - @tasks.each do |task|
+      - if task.status==s.to_s
+        .row{:draggable=>'true', :ondragstart=>'drag(event)',:id=>"#{task.to_param}"}
+          .col-sm-12
+            = render 'tasks/show' , task: task
 
-
-- @tasks.each do |task|
-  .row
-    %div{:class=>"#{class_from_status(task.status)}",:draggable=>"true"}
-      = render 'tasks/show' , task: task
 
 
