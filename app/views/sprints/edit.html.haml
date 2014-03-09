@@ -1,5 +1,7 @@
-%h1 Editing sprint
+- content_for :top do
+  %h1 Editing sprint
 
+=render 'projects/nav'
 = render 'form'
 
 = link_to 'Show', project_sprint_path(@sprint.project,@sprint)

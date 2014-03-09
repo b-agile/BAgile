@@ -11,11 +11,15 @@
 <% end %>
 <% if user_signed_in? %>
     <li>
-      <a data-toggle="dropdown" href="#"><%=t 'projects'%></a>
+      <a data-toggle="dropdown" href="#"><%= t 'projects' %></a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <% @projects_on_navbar.each do |p|%>
+        <% @projects_on_navbar.each do |p| %>
             <li><%= link_to p.name, p %></li>
         <% end %>
+        <% if !@projects_on_navbar.empty? %>
+            <hr/>
+        <% end %>
+        <li><%= link_to t('create_new_project'), new_project_path %></li>
       </ul>
     <li><%= link_to 'New Task', new_task_path %></li>
 <% end %>

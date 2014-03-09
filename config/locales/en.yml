@@ -27,10 +27,14 @@ en:
       task:
         title: "Title"
         description: "Description"
+      project:
+        users: "Select the team"
     placeholders:
       task:
         title: "As a user, I want to add a ticket"
         description: "Add every information to help the developer to understand what you want."
+      sprint:
+        name: "This is the main goal of the sprint"
     options:
       task:
         status:
