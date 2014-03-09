@@ -13,6 +13,7 @@ BAgile::Application.routes.draw do
   resources :tasks,  only: [:new, :create,:show, :edit, :update, :destroy]
 
 
+  post '/tasks/:id', to: 'tasks#update_status'
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

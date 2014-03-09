@@ -31,7 +31,7 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("Text");
     var droppable =getDroppable(ev.target);
     droppable.appendChild(document.getElementById(data));
-    $.post( "tasks/"+data, { status: droppable.attributes['status'].value } );
+    $.post( "/tasks/"+data, { status: droppable.attributes['status'].value } );
 }
 
 function handleDragOver(e) {

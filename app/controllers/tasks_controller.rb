@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :update_status]
   before_action :set_project
 
   load_and_authorize_resource
@@ -29,6 +29,15 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+  end
+
+
+  def update_status
+    @task.status=params[:status]
+    if @task.status=='in_progress'
+      @task.assign_to=current_user
+    end
+    @task.save
   end
 
   # POST /tasks
